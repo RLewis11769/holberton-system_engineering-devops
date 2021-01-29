@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -maF --group-directories-first | sort -n
+ls -maF --group-directories-first | sort -d
