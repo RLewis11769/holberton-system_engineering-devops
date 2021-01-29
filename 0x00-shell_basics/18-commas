@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -maF | sort
+dir -maF | sort
