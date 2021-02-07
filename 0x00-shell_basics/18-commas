@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -mapv --group-directories-first | sort
+ls -amp --group-directories-first
