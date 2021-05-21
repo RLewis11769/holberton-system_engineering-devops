@@ -1,0 +1,6 @@
+Host web01
+     HostName 54.174.125.120
+     User ubuntu
+     StrictHostKeyChecking no
+     PasswordAuthentication no
+     IdentityFile ~/.ssh/holberton
