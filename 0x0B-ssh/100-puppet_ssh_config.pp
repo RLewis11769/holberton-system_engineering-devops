@@ -2,6 +2,6 @@
 
 file { '/etc/ssh/ssh_config':
   ensure => 'present',
-  content => 'PasswordAuthentication no',
-  content => 'IdentityFile ~/.ssh/holberton'
+  content => 'PasswordAuthentication no
+  IdentityFile ~/.ssh/holberton'
 }
