@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Prints list of files in directory after "-" if applicable
+
+for file in *
+do
+	echo $file | cut -d "-" -f2
+done
