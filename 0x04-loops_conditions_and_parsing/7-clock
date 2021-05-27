@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Prints "Holberton School" 10 times
+# Prints clock of hour and minutes - 780 lines
 h=0
-while [ $h -lt 12 ]
+while [ $h -le 12 ]
 do
-	echo "Hour: $h"
+	echo Hour: $h
 	m=1
 	while [ $m -lt 60 ]
 	do
