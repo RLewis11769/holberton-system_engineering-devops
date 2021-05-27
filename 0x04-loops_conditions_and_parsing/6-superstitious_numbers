@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Prints "Holberton School" 10 times
+x=1
+while [ $x -le 20 ]
+do
+echo $x
+	if [ $x == 4 ]
+	then
+		echo "bad luck from China"
+	elif [ $x == 9 ]
+	then
+		echo "bad luck from Japan"
+	elif [ $x == 17 ]
+	then
+		echo "bad luck from Italy"
+	fi
+	((x++))
+done
