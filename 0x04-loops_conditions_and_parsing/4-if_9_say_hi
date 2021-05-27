@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Prints "Holberton School" 10 times
+# Prints "Holberton School" 10 times but also "Hi" on 9th loop
+
 x=1
 while [ $x -le 10 ]
 do
