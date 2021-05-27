@@ -6,7 +6,7 @@ do
 	echo "Holberton School"
 	if [ $x == 9 ]
 	then
-		echo "hi"
+		echo "Hi"
 	fi
 	((x++))
 done
