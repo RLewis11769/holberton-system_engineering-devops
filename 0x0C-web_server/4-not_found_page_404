@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Install nginx and change config file
+
+# Adds redirect_me option to config
+# Need to find string, add additional above, and add old string back (to add, rather than replace)
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+
+find="\tlocation / {"
+replace="\terror_page 404 /error404.html;\n\n\tlocation / {"
+
+sudo sed -i "s@^${find}@${replace}@" /etc/nginx/sites-available/default
+
+sudo touch /var/www/html/error404.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
+
+sudo service nginx restart
