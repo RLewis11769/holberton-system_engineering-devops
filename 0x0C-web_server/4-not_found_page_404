@@ -16,6 +16,6 @@ replace="\terror_page 404 /error404.html;\n\n\tlocation / {"
 sudo sed -i "s@^${find}@${replace}@" /etc/nginx/sites-available/default
 
 sudo touch /var/www/html/error404.html
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
 
 sudo service nginx restart
