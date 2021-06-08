@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Install nginx and change config file
+
+# default port: 80 (to specify, example: curl localhost:81)
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
