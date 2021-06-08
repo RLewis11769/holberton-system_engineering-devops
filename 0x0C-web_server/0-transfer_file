@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-# Uses SCP to transfer file
+# Uses SCP to transfer file to user home directory ~/
+
 # argv[0] - path to file to be transferred
 # argv[1] - IP of server to be transferred to
 # argv[2] - username scp connects with
 # argv[3] - path to SSH private key that scp uses
-# example: ./0-transfer_file ~/.ssh/web01 file ubuntu@54.174.125.120
+# example: ./0-transfer_file transfer_dummy 54.174.125.120 ubuntu ~/.ssh/web01
+
 if [ $# -ne 4 ]; then
     echo "0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 else
