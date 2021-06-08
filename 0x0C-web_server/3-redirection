@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Install nginx and change config file
+
+# Adds redirect_me option to config
+# Need to find string, add additional above, and add old string back (to add, rather than replace)
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+
+find="^tlocation / {"
+replace="\tlocation / redirect_me {\n\t\treturn 3-1 \$scheme:https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t\t}\n\n\t\tlocation / {"
+
+sed -i "s@${find}@${replace}@" /etc/nginx/sites-available/default
+
+sudo service nginx restart
