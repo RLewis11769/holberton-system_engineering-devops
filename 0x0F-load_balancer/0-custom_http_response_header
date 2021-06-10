@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Sets server up as in 0x0C-web_server 3 & 4
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+
+find="\tlocation / {"
+replace="\tadd_header X-Served-By ${HOSTNAME};\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\terror_page 404 /error404.html;\n\n\tlocation / {"
+
+sudo sed -i "s@^${find}@${replace}@" /etc/nginx/sites-available/default
+
+sudo touch /var/www/html/error404.html
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
+
+sudo service nginx restart
