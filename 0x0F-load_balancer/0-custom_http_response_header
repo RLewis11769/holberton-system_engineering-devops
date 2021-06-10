@@ -10,7 +10,7 @@ sudo service nginx start
 echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
 
 find="\tlocation / {"
-replace="\tadd_header X-Served-By ${HOSTNAME};\n\t}\n\n\terror_page 404 /error404.html;\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\n\tlocation / {"
+replace="\tadd_header X-Served-By ${HOSTNAME};\n\n\terror_page 404 /error404.html;\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
 
 sudo sed -i "s@^${find}@${replace}@" /etc/nginx/sites-available/default
 
