@@ -3,7 +3,7 @@
 ## Mandatory
 
 ### 0-use_a_private_key
-- Bash script that connects to server via ssh
+- Bash script that connects to my server via ssh
     - Private key: ~/.ssh/holberton
     - User: ubuntu
 
@@ -11,15 +11,22 @@
 - Bash script that creates RSA key pair
     - Private key: holberton
     - Number of bits: 4096
-    - Passphrase: betty
+    - Password: betty
 
 ### 2-ssh_config
 - Configured SSH configuration file without password
     - Private key: ~/.ssh/holberton
-    - Refuse authentification using password
+    - No password required
+    - Can change hosts/servers and still use
 
 ### 3 (no file, just in server)
 - SSH public key entered into server
+
+## Advanced
+
+### 100-puppet_ssh_config.pp
+- Use Puppet to run configure SSH without password
+    - Same setup as 2-ssh_config
 
 ## Learning Objectives
 - What is a server

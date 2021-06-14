@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # Create SSH key pair
+# ssh-keygen (-bits 4096) (-NewPassword betty) (-fileSavedIn holberton)
+# So to create normally: ssh-keygen -f filename
+# OR create in terminal with prompts: ssh-keygen
 ssh-keygen -b 4096 -N betty -f holberton

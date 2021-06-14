@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Use private key to connect to server
+# ssh -i (location where private key is stored) (username @ server)
 ssh -i ~/.ssh/holberton ubuntu@54.174.125.120
