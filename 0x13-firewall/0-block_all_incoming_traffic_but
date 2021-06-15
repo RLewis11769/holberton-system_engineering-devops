@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# NB: SSH uses port 22, HTTP uses port 80, HTTPS uses 443
+# Test open ports by telnet 54.174.125.120 22 (or telnet google.com 80)
+
+sudo ufw enable
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
