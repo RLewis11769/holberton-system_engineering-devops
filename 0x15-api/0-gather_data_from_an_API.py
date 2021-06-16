@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+# Uses restAPI and jsonplaceholder to return info about employee productivity
 
 import requests
 import sys
+
 
 def get_employee_tasks(empID):
     # Returns given info about given employee ID
@@ -15,14 +17,12 @@ def get_employee_tasks(empID):
 
     userJSON = userResponse.json()
     name = userJSON.get('name')
-    # print(name)
 
     todoJSON = todoResponse.json()
     for task in todoJSON:
-        if task.get('completed') == True:
+        if task.get('completed') is True:
             completed += 1
             task_list.append(task.get('title'))
-    # print(task_list)
 
     print("Employee {} is done with tasks ({}/{}):".format(name, completed, len(todoJSON)))
     for task in task_list:
