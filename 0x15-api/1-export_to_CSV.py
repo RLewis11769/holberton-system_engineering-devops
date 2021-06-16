@@ -38,7 +38,7 @@ def export_to_csv(empID):
 
     # Write to empID.csv file
     with open("{}.csv".format(empID), 'w') as csvFile:
-        # Quote all fields
+        # Quote all fields aka "2","Shadow"
         csvwriter = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
         # Write row from task_list to file
         csvwriter.writerows(task_list)
