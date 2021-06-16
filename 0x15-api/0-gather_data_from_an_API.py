@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Uses restAPI and jsonplaceholder to return info about employee productivity
+""" Uses restAPI and jsonplaceholder to return info about employee productivity """
 
 import requests
 import sys
