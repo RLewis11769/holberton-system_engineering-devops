@@ -28,7 +28,7 @@ def get_employee_tasks(empID):
             completed += 1
             task_list.append(task.get('title'))
 
-    print("Employee {} is done with tasks ({}/{}):".format(
+    print("Employee {} is done with tasks({}/{}):".format(
         name, completed, len(todoJSON)))
     for task in task_list:
         print("\t {}".format(task))
