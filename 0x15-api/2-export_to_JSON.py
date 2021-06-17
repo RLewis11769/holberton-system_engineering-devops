@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Uses REST API to return jsonplaceholder employee productivity info
-Writes gathered info to .csv file
+Writes gathered info to .json file
+Called with ./2 (employee ID number)
 """
 
 import json
@@ -10,7 +11,7 @@ import sys
 
 
 def export_to_json(empID):
-    # Returns given info about given employee ID
+    """ Prints info about all tasks for given employee ID to json file """
 
     name = ''
     userDict = {}
@@ -25,14 +26,19 @@ def export_to_json(empID):
 
     todoJSON = todo.json()
 
+    # userDict at key empID is list, everything else is value
     userDict[empID] = []
 
+    # Format is: {empID: [{task key: task value}, {task key: task value}]}
     for task in todoJSON:
+        # Each taskDict should have format:
+        #   "task": "value", "username": "value", "completed": true/false
         taskDict = {}
         taskDict["task"] = task.get('title')
         taskDict["username"] = name
         taskDict["completed"] = task.get('completed')
 
+        # When each taskDict is built properly, add to final dict at empID key
         userDict[empID].append(taskDict)
 
     # Write to empID.json file
