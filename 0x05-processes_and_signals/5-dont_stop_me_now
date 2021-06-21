@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Sends kill command to 4-to_infinity_and_beyond
+# shellcheck disable=SC2009
+kill "$( ps aux | pgrep -f 4-to_infinity_and_beyond)"
