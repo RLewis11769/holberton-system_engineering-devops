@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+* infinite_while - infinite loop
+* Return: 0 if successful
+*/
 int infinite_while(void)
 {
     while (1)
@@ -9,6 +13,10 @@ int infinite_while(void)
     return (0);
 }
 
+/**
+* main - creates zombie processes
+* Return: 0 if successful
+*/
 int main(void)
 {
     pid_t pid;
